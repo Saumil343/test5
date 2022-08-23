@@ -1,20 +1,16 @@
----
 - hosts: 172.31.36.60
   tasks:
-    - name: saunil
-      shell: rm -rf /var/www/html/geek/*
-
     - name: cleaning files
       shell: rm -rf ~/test5
 
     - name: pull
-      shell: git clone https://github.com/Saumil343/test5.git
+      shell: git clone -b master https://github.com/Saumil343/test5.git
 
-    - name: copy
-      shell: cp -r ~/test5 /var/www/html/geek/
+    - name: docker kill
+      shell: docker stop phpapp4 || true && docker rm phpapp4 || true
+    
+    - name: docker build
+      shell: docker build -t saumil343/demoapp5 ~/test5/
       
-    - name: service1
-      service:
-        name: httpd
-        state: restarted
-   
+    - name: docker run 
+      shell: docker run -it -d --name phpapp4 -p 80:80 saumil343/demoapp5
