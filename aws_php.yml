@@ -15,4 +15,4 @@
       shell: docker build -t saumil343/demoapp5 ~/test5/
       
     - name: docker run 
-      shell: docker run -it -d --name phpapp4 -p 80:80 saumil343/demoapp5
+      shell: docker run -it -d --name phpapp4 -p 3200:80 saumil343/demoapp5
