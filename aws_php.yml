@@ -6,7 +6,7 @@
       shell: rm -rf ~/test5
 
     - name: pull
-      shell: git clone -b master https://github.com/Saumil343/test5.git
+      shell: git clone https://github.com/Saumil343/test5.git
 
     - name: docker kill
       shell: docker stop phpapp4 || true && docker rm phpapp4 || true
