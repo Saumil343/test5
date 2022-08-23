@@ -1,3 +1,5 @@
+---
+
 - hosts: 172.31.36.60
   tasks:
     - name: cleaning files
